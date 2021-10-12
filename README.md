@@ -2,14 +2,14 @@
 ## Description
 A Ruby on Rails API which consumes data from PokeApi.co, process data and returns JSON to the end user.
 
-PokePan create request to PokeAapi, skips first 100 Pokemon and takes the next 10.
+PokePan create request to PokeAapi, skips first 100 Pokémon and takes the next 10.
 PokemonService parses the response to JSON, iterates over every entry, extract the needed information and creates record in the database.
-There are validations if Pokemon or Type is existing in database. 
-After we have Pokemon records in database, the next step is to get every on of them (including the association type that it has, since we want to avoid n+1 query) and put it through a Decorator (Draper) to convert it to JSON only with attributes we need. Finally we render the array as a JSON.
+There are validations if Pokémon or Type is existing in database. 
+After we have Pokémon records in the database, the next step is to get every one of them (including the association type that it has, since we want to avoid n+1 query) and put it through a Decorator (Draper) to convert it to JSON only with attributes we need. Finally, we render the array as a JSON.
 
-For #show action of specific Pokemon the process is simpler - we should already have the database of Pokemon, the set_pokemon method sets the object we should render, then we just pass it to decorator in show action and render it as a JSON. There are two methods which decorator uses so we can display additional information - one for #index action and one for #show.
+For #show action of specific Pokémon the process is simpler - we should already have the database of Pokémon, the set_pokemon method sets the object we should render, then we just pass it to decorator in show action and render it as a JSON. There are two methods which decorator uses, so we can display additional information - one for #index action and one for #show.
 
-There are rspecs which validate the fileds - if is present, if it's lenght do not exceed 255 characters, if associations are valid, etc.
+There are rspecs which validates the fields - if it has record, if its length exceed 255 characters, if associations are valid, etc.
 
 One simple view is created - it represents the home page.
 
@@ -39,12 +39,12 @@ rvm install ruby-2.7.3 # for 'rvm'
 rbenv install 2.7.3 # for 'rbenv'
 ```
 		
-Next you need to set this version to be the default one (since we can have more than on version of Ruby installed):
+Next, you need to set this version to be the default one (since we can have more than one version of Ruby installed):
 		rvm use ruby-2.7.3 # 'rvm' switch to specified Ruby version
 		rbenv local 2.7.3 # 'rbenv' switch to specified Ruby version
 
 #### Install Bundler
-Third step is to install Bundler v2.2.21:
+The third step is to install Bundler v2.2.21:
 ```sh
 gem install bundler -v 2.2.21
 ```
@@ -85,9 +85,9 @@ rails s # Starting web server Puma
 ##### Can be tested with Postman API: https://www.postman.com/impanayotov90/workspace/pokepan/request
 ##### Also through https://pokepan.herokuapp.com:
 - '/' returns welcome page with basic HTML page which helps to test the other endpoints
-- '/pokemons' returns a list of Pokemon as a JSON
-- '/pokemons/:poke_id', for example: '/pokemons/101' returns show action of Pokemon with Poke_id 101 as a JSON
-- '/update-pokemons' updates the list of Pokemon
+- '/pokemons' returns a list of Pokémon as a JSON
+- '/pokemons/:poke_id', for example: '/pokemons/101' returns #show action of Pokémon with Poke_id 101 as a JSON
+- '/update-pokemons' updates the list of Pokémon
 
 ##### Swagger API documentation: https://app.swaggerhub.com/apis/pokepan/PokePan/1.0.0
 		
