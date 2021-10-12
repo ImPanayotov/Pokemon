@@ -82,7 +82,7 @@ bundle exec rspec
 ```sh
 rails s # Starting web server Puma
 ```
-##### Can be tested with Postman API: https://www.postman.com/impanayotov90/workspace/pokepan/request
+##### Can be tested with Postman API: https://www.postman.com/impanayotov90/workspace/pokepan/request (the JSON with requests is exported to root folder of PokePan API - 'PokePan API.postman_collection.json')
 ##### Also through https://pokepan.herokuapp.com:
 - '/' returns welcome page with basic HTML page which helps to test the other endpoints
 - '/pokemons' returns a list of Pokémon as a JSON
