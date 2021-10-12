@@ -83,7 +83,7 @@ jobs:
           # # https://knapsackpro.com/faq/question/how-to-split-slow-rspec-test-files-by-test-examples-by-individual-it
           # # KNAPSACK_PRO_RSPEC_SPLIT_BY_TEST_EXAMPLES: true
         run: |
-          rails rspec
+          bundle exec rspec
           # # run tests in Knapsack Pro Regular Mode
           # bundle exec rake knapsack_pro:rspec
           # bundle exec rake knapsack_pro:cucumber
