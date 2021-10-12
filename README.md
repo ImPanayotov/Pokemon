@@ -35,18 +35,18 @@ Follow the steps in RBENV GitHub repository: https://github.com/rbenv/rbenv#inst
 #### Install Ruby
 Second step is to install Ruby v.2.7.0:
 ```sh
-rvm install ruby-2.7.3 # for 'rvm'
-rbenv install 2.7.3 # for 'rbenv'
+rvm install ruby-2.7.0 # for 'rvm'
+rbenv install 2.7.0 # for 'rbenv'
 ```
 		
 Next, you need to set this version to be the default one (since we can have more than one version of Ruby installed):
-		rvm use ruby-2.7.3 # 'rvm' switch to specified Ruby version
-		rbenv local 2.7.3 # 'rbenv' switch to specified Ruby version
+		rvm use ruby-2.7.0 # 'rvm' switch to specified Ruby version
+		rbenv local 2.7.0 # 'rbenv' switch to specified Ruby version
 
 #### Install Bundler
-The third step is to install Bundler v2.2.21:
+The third step is to install Bundler v2.1.2:
 ```sh
-gem install bundler -v 2.2.21
+gem install bundler -v 2.1.2
 ```
 			
 #### Clone repository
@@ -86,7 +86,7 @@ rails s # Starting web server Puma
 ##### Also through https://pokepan.herokuapp.com:
 - '/' returns welcome page with basic HTML page which helps to test the other endpoints
 - '/pokemons' returns a list of Pokémon as a JSON
-- '/pokemons/:poke_id', for example: '/pokemons/101' returns #show action of Pokémon with Poke_id 101 as a JSON
+- '/pokemons/:poke_id', for example: '/pokemons/101' returns #show action of Pokémon with Poke_id 101 as a JSON (currently we have poke id's in the 101..110 range)
 - '/update-pokemons' updates the list of Pokémon
 
 ##### Swagger API documentation: https://app.swaggerhub.com/apis/pokepan/PokePan/1.0.0
