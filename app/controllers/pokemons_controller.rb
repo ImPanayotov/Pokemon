@@ -3,11 +3,18 @@ class PokemonsController < ApplicationController
 
   # GET /pokemons
   def index
-    @pokemons = PokemonService.new.call
-    @pokemons = Pokemon.all.map do |pokemon|
+    @pokemons = Pokemon.all.includes(:types).map do |pokemon|
       PokemonDecorator.decorate(pokemon).convert_for_index
     end
     render json: @pokemons
+  end
+
+  def update_pokemon_list
+    PokemonService.new.call
+
+    respond_to do |format|
+      format.json { render json: { message: 'Successfully updates the list of Pokemon' } }
+    end
   end
 
   # GET /pokemons/1
