@@ -10,7 +10,7 @@ jobs:
     # https://github.com/actions/example-services/tree/master/.github/workflows
     services:
       postgres:
-        image: postgres:10.8
+        image: postgres:12.8
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: ""
@@ -45,7 +45,7 @@ jobs:
 
     env:
       RAILS_ENV: test
-      GEMFILE_RUBY_VERSION: 2.7.2
+      GEMFILE_RUBY_VERSION: 2.7.0
       PGHOST: localhost
       PGUSER: postgres
       # Rails verifies the time zone in DB is the same as the time zone of the Rails app
@@ -58,7 +58,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           # Not needed with a .ruby-version file
-          ruby-version: 2.7
+          ruby-version: 2.7.0
           # runs 'bundle install' and caches installed gems automatically
           bundler-cache: true
 
