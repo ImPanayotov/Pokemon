@@ -1,0 +1,70 @@
+{
+	"info": {
+		"_postman_id": "9140d23e-bb78-44e5-9e3c-9be3039b4706",
+		"name": "PokePan API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET All Pokemon",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://pokepan.herokuapp.com/pokemons",
+					"protocol": "https",
+					"host": [
+						"pokepan",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"pokemons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Specific Pokemon by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://pokepan.herokuapp.com/pokemons/101",
+					"protocol": "https",
+					"host": [
+						"pokepan",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"pokemons",
+						"101"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Updates Pokemon list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://pokepan.herokuapp.com/update-pokemons",
+					"protocol": "https",
+					"host": [
+						"pokepan",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"update-pokemons"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
