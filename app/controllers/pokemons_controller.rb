@@ -9,6 +9,7 @@ class PokemonsController < ApplicationController
     render json: @pokemons
   end
 
+  # GET /update_pokemon_list
   def update_pokemon_list
     PokemonService.new.call
 
