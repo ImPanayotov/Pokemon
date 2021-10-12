@@ -1,5 +1,5 @@
 # PokePan
-##### Short description
+## Description
 A Ruby on Rails API which consumes data from PokeApi.co, process data and returns JSON to the end user.
 
 PokePan create request to PokeAapi, skips first 100 Pokemon and takes the next 10.
