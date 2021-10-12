@@ -1,0 +1,29 @@
+<h1>Welcome to PokePan!</h1>
+
+<div>
+    <p>You can update Pokemon list by clicking here:</p>
+    <button onclick="window.location.href='https://pokepan.herokuapp.com/update-pokemons';">Update Pokemon</button>
+</div>
+<br/>
+<div>
+    <p>Or you can get the entire list of Pokemon by clicking here:</p>
+    <button onclick="window.location.href='https://pokepan.herokuapp.com/pokemons';">List all Pokemon</button>
+</div>
+<br/>
+<div>
+    <p>You can also show Pokemon with specific Poke ID:</p>
+    <input type="text" id="poke_id" />
+    <button id="poke_button">Show Pokemon</button>
+</div>
+<script>
+function fire() {
+  var base_url = "http://pokepan.herokuapp.com/pokemons/";
+  var poke_id = document.getElementById("poke_id").value;
+  window.location.href = base_url + poke_id;
+}
+
+document.getElementById("poke_button").onclick = fire;
+</script>
+
+
+
