@@ -59,3 +59,7 @@ gem "shoulda-matchers", "~> 5.0"
 gem "factory_bot_rails", "~> 6.2"
 
 gem "rspec-rails", "~> 5.0"
+
+gem "sentry-ruby", "~> 5.1"
+
+gem "sentry-rails", "~> 5.1"

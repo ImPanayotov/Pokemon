@@ -211,6 +211,14 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    sentry-rails (5.1.0)
+      railties (>= 5.0)
+      sentry-ruby-core (~> 5.1.0)
+    sentry-ruby (5.1.0)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      sentry-ruby-core (= 5.1.0)
+    sentry-ruby-core (5.1.0)
+      concurrent-ruby
     shoulda-matchers (5.0.0)
       activesupport (>= 5.2.0)
     spring (3.0.0)
@@ -265,6 +273,8 @@ DEPENDENCIES
   rspec-rails (~> 5.0)
   sass-rails (>= 6)
   selenium-webdriver
+  sentry-rails (~> 5.1)
+  sentry-ruby (~> 5.1)
   shoulda-matchers (~> 5.0)
   spring
   turbolinks (~> 5)
