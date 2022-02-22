@@ -1,4 +1,5 @@
 class PokemonsController < ApplicationController
+  include PokemonHelper
   before_action :set_pokemon, only: :show
 
   # GET /pokemons
@@ -7,6 +8,15 @@ class PokemonsController < ApplicationController
       PokemonDecorator.decorate(pokemon).convert_for_index
     end
     render json: @pokemons
+  end
+  
+  # GET/pokemons from Redis
+  def index_redis
+    fetch_pokemons
+    @redis_pokemons = Pokemon.all.includes(:types).map do |pokemon|
+      PokemonDecorator.decorate(pokemon).convert_for_index
+    end
+    render json: @redis_pokemons
   end
 
   # GET /update_pokemon_list
@@ -22,6 +32,7 @@ class PokemonsController < ApplicationController
   def show
     render json: PokemonDecorator.decorate(@pokemon).convert_for_show
   end
+
 
   private
 

@@ -3,7 +3,9 @@ class PokemonDecorator < ApplicationDecorator
     {
       poke_id: object.poke_id,
       name: object.name,
-      types: create_types_arr(object)
+      types: create_types_arr(object),
+      created_at: object.created_at,
+      updated_at: object.updated_at
     }
   end
 

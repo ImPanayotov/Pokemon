@@ -63,3 +63,11 @@ gem "rspec-rails", "~> 5.0"
 gem "sentry-ruby", "~> 5.1"
 
 gem "sentry-rails", "~> 5.1"
+
+gem "redis", "~> 4.6"
+
+gem "redis-namespace", "~> 1.8"
+
+gem "redis-rails", "~> 5.0"
+
+gem "dotenv-rails", "~> 2.7"

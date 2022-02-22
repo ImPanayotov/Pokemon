@@ -2,7 +2,7 @@ class PokemonService < ApplicationService
   def call
     pokemons = []
 
-    response = HTTParty.get('https://pokeapi.co/api/v2/pokemon?limit=10&offset=100')
+    response = HTTParty.get('https://pokeapi.co/api/v2/pokemon?limit=1&offset=100')
     response = JSON.parse(response.body)
 
     response['results'].each do |key, _value|
@@ -12,8 +12,13 @@ class PokemonService < ApplicationService
     end
 
     pokemons.map do |poke|
-      unless Pokemon.find_by(poke_id: poke['id'])
-        pokemon = Pokemon.create(
+      pokemon = Pokemon.where(poke_id: poke['id']).first
+
+      if pokemon
+        pokemon.update(updated_at: Time.now)
+      else
+
+        Pokemon.create(
           poke_id: poke['id'],
           name: poke['forms'][0]['name'],
           base_experience: poke['base_experience'],
@@ -26,10 +31,10 @@ class PokemonService < ApplicationService
 
       type_name = poke['types'][0]['type']['name']
 
-      if !Type.where(name: type_name).present? && pokemon
+      Type.where(name: type_name).first_or_create(name: type_name)
+
+      if pokemon.types.nil?
         pokemon.types.create(name: type_name)
-      elsif Type.where(name: type_name).present? && pokemon
-        pokemon.types << Type.where(name: type_name).first
       end
 
       pokemons
