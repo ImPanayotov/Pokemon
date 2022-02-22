@@ -2,7 +2,7 @@ class PokemonService < ApplicationService
   def call
     pokemons = []
 
-    response = HTTParty.get('https://pokeapi.co/api/v2/pokemon?limit=1&offset=100')
+    response = HTTParty.get('https://pokeapi.co/api/v2/pokemon?limit=2&offset=100')
     response = JSON.parse(response.body)
 
     response['results'].each do |key, _value|

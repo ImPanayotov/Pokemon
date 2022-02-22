@@ -11,7 +11,9 @@ class Application < Rails::Application
   config.load_defaults 6.1
 
   # Redis configurations
-  config.cache_store = :redis_store, "redis://localhost:6379/0/cache", { expires_in: 90.minutes }
+  # config.cache_store = :redis_store, "redis://localhost:6379/0/cache", { expires_in: 90.minutes }
+  config.cache_store = :redis_store, "redis://redis-13574.c56.east-us.azure.cloud.redislabs.com:13574/0/cache", { expires_in: 1.minute }
+
 
   # Configuration for the application, engines, and railties goes here.
   #
