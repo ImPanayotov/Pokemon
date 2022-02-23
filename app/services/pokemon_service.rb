@@ -36,7 +36,7 @@ class PokemonService < ApplicationService
       if pokemon.types.nil?
         pokemon.types.create(name: type_name)
       end
-
+      
       pokemons
     end
   end

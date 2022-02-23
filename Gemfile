@@ -71,3 +71,5 @@ gem "redis-namespace", "~> 1.8"
 gem "redis-rails", "~> 5.0"
 
 gem "dotenv-rails", "~> 2.7"
+
+gem "sidekiq", "~> 6.4"
