@@ -21,10 +21,10 @@ class PokemonsController < ApplicationController
 
   # GET /update_pokemon_list
   def update_pokemon_list
-    PokemonService.new.call
+    PokemonWorker.perform_async
 
     respond_to do |format|
-      format.json { render json: { message: 'Successfully updates the list of Pokemon' } }
+      format.json { render json: { message: 'Updating the list of Pokemon :)' } }
     end
   end
 
