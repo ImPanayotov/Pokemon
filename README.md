@@ -14,6 +14,8 @@ There are rspecs which validates the fields - if it has record, if its length ex
 One simple view is created - it represents the home page.
 
 #### The project is deployed with Heroku and GitHub: https://pokepan.herokuapp.com/
+#### Using Redis as a cache-store for some Pokemon (on '/index_redis' endpoint)
+#### Sidekiq is used for background jobs (on '/update-pokemons' endpoint)
 #### It has GitHub action that runs rspecs on push to main
 
 ##### Versions used:
@@ -87,7 +89,8 @@ rails s # Starting web server Puma
 - '/' returns welcome page with basic HTML page which helps to test the other endpoints
 - '/pokemons' returns a list of Pokémon as a JSON
 - '/pokemons/:poke_id', for example: '/pokemons/101' returns #show action of Pokémon with Poke_id 101 as a JSON (currently we have poke id's in the 101..110 range)
-- '/update-pokemons' updates the list of Pokémon
+- '/update-pokemons' updates the list of Pokémon - returns message while the request is executed with Sidekiq
+- '/pokemons/index_redis' returns some of the Pokemon from Redis cache-store
 
 ##### Swagger API documentation: https://app.swaggerhub.com/apis/pokepan/PokePan/1.0.0
 		
