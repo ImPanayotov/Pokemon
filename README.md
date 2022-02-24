@@ -16,14 +16,15 @@ One simple view is created - it represents the home page.
 #### The project is deployed with Heroku and GitHub: https://pokepan.herokuapp.com/
 #### Using Redis as a cache-store for some Pokemon (on '/index_redis' endpoint)
 #### Sidekiq is used for background jobs (on '/update-pokemons' endpoint)
+#### Sentry is integrated
 #### It has GitHub action that runs rspecs on push to main
 
 ##### Versions used:
-Ruby v.2.7.0
-Rails v.6.1.4.1
-RubyGems v.3.1.2
-RVM v.1.29.12
-PostgreSQL v.12.8
+###### Ruby v.2.7.0
+###### Rails v.6.1.4.1
+###### RubyGems v.3.1.2
+###### RVM v.1.29.12
+###### PostgreSQL v.12.8
 
 
 ### HOW TO INSTALL
